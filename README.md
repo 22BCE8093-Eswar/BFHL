@@ -56,7 +56,7 @@ json
 ````
 
 How to Run Locally
-Clone the repository: git clone https://github.com/22BCE8093-Eswar/BHFL.git
+Clone the repository: git clone [https://github.com/22BCE8093-Eswar/BHFL.git](https://github.com/22BCE8093-Eswar/BFHL)
 cd bfhl_api
 Install dependencies:
 ```
