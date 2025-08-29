@@ -37,9 +37,10 @@ The API follows the requirements of the Full Stack Question Paper project and is
 {
   "data": ["a","1","334","4","R","$"]
 }
-Response Example
+````
+**Response Example:**
 json
-Copy code
+````
 {
   "is_success": true,
   "user_id": "eswar_reddy_boyi_8093",
@@ -86,11 +87,14 @@ js
 fetch("https://bfhl-pkmk.onrender.com/bfhl")
 ````
 
-Deployment
+**Deployment**
 API hosted on Render: https://bfhl-pkmk.onrender.com/bfhl
+
 frontend: https://bfhl-test-api.netlify.app/
 
 Author
 Name: Eswar Reddy Boyi
+
 Email: eswarboyi7@gmail.com
+
 College Roll Number: 22BCE8093
