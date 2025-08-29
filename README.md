@@ -70,15 +70,18 @@ node index.js
 
 
 Test API using PowerShell:
+````
 (Invoke-WebRequest -Uri "http://localhost:5000/bfhl" -Method POST -ContentType "application/json" -Body '{"data":["2","a","y","4","&","*","5","92","b"]}').Content
-Frontend Usage
+````
+
+
+Frontend Usage:
 Open index.html in a browser.
-
 Enter a JSON array in the input box, e.g.:
-
 json
-Copy code
+````
 ["a","1","334","4","R","$"]
+````
 Click Submit to see the API response.
 
 Note: Make sure the fetch() URL in index.html points to the deployed API:
@@ -92,7 +95,7 @@ API hosted on Render: https://bfhl-pkmk.onrender.com/bfhl
 
 frontend: https://bfhl-test-api.netlify.app/
 
-Author
+**Author**
 Name: Eswar Reddy Boyi
 
 Email: eswarboyi7@gmail.com
