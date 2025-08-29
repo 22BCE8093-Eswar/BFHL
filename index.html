@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BFHL API Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 10px; margin: 5px 0; width: 300px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>BFHL API Test</h1>
+  <input type="text" id="dataInput" placeholder='Enter JSON array like ["a","1","2"]' />
+  <br>
+  <button onclick="sendData()">Submit</button>
+
+  <h3>Response:</h3>
+  <pre id="result"></pre>
+
+  <script>
+    async function sendData() {
+      const input = document.getElementById("dataInput").value;
+      let array;
+
+      try {
+        array = JSON.parse(input);
+        if (!Array.isArray(array)) throw new Error("Not an array");
+      } catch(e) {
+        document.getElementById("result").innerText = "Invalid input! Enter a JSON array.";
+        return;
+      }
+
+      try {
+        const response = await fetch("https://bfhl-pkmk.onrender.com/bfhl", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ data: array })
+        });
+        const result = await response.json();
+        document.getElementById("result").innerText = JSON.stringify(result, null, 2);
+      } catch(err) {
+        document.getElementById("result").innerText = "Error connecting to API: " + err;
+      }
+    }
+  </script>
+</body>
+</html>
